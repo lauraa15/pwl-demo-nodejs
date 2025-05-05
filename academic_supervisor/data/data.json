@@ -1,0 +1,41 @@
+{
+  "dosen": [
+    {
+      "id": "D-72099",
+      "nama": "Dr. Bobon Corbuzier",
+      "mahasiswa": ["M001", "M002", "M003"]
+    },
+    {
+      "id": "D-72098",
+      "nama": "Prof. El Ghozali",
+      "mahasiswa": ["M004", "M005"]
+    }
+  ],
+  "mahasiswa": [
+    {
+      "id": "M001",
+      "nama": "Puspa Ana",
+      "dosen_id": "D-72099"
+    },
+    {
+      "id": "M002",
+      "nama": "Laura Amel",
+      "dosen_id": "D-72099"
+    },
+    {
+      "id": "M003",
+      "nama": "Ameli Puspa",
+      "dosen_id": "D-72099"
+    },
+    {
+      "id": "M004",
+      "nama": "Laura Anna",
+      "dosen_id": "D-72098"
+    },
+    {
+      "id": "M005",
+      "nama": "Liana Laura",
+      "dosen_id": "D-72098"
+    }
+  ]
+}

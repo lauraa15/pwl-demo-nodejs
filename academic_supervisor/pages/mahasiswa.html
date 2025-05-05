@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Mahasiswa</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+<header>
+    <h1>Daftar Mahasiswa</h1>
+</header>
+<nav>
+    <a href="/">Beranda</a>
+    <a href="/?menu=dosen">Data Dosen</a>
+</nav>
+<main>
+    <div id="mahasiswa-list"></div>
+</main>
+
+<script>
+    fetch('/data')
+        .then(res => res.json())
+        .then(data => {
+            const list = document.getElementById('mahasiswa-list');
+            const dosenMap = {};
+            data.dosen.forEach(d => dosenMap[d.id] = d.nama);
+
+            data.mahasiswa.forEach(mhs => {
+                const dosenNama = dosenMap[mhs.dosen_id] || 'Tidak diketahui';
+                list.innerHTML += `
+            <div class="card">
+              <strong>${mhs.nama}</strong><br>
+              ID: ${mhs.id}<br>
+              Dosen Wali: ${dosenNama}
+            </div>
+          `;
+            });
+        });
+</script>
+</body>
+</html>
