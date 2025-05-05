@@ -8,7 +8,6 @@ const server = http.createServer((req, res) => {
     const pathname = q.pathname;
     const menu = q.query.menu;
 
-    // ✅ Endpoint untuk ambil data JSON
     if (pathname === '/data') {
         fs.readFile('./data/data.json', 'utf8', (err, data) => {
             if (err) {
@@ -22,7 +21,6 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // ✅ Sajikan file CSS
     if (pathname.startsWith('/public/')) {
         const cssPath = path.join(__dirname, pathname);
         fs.readFile(cssPath, (err, data) => {
@@ -37,7 +35,6 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // ✅ Sajikan HTML berdasarkan menu query
     let fileLocation = '';
     switch (menu) {
         case 'mahasiswa':
